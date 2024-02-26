@@ -12,7 +12,6 @@ class CSVTimeSeriesFile():
                 print("Errore! File non esistente: {}".format(e))
 
             values = []
-            my_file = open(self.name, 'r')
 
             while True:
                 lineaFile = my_file.readline()
