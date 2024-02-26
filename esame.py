@@ -29,8 +29,8 @@ class CSVTimeSeriesFile():
             primaRilevazione.append(linea[0])
             primaRilevazione.append(int(linea[1]))
             values.append(primaRilevazione)
-            currentYear = int(linea[0].split('-')[0])
-            currentMonth = int(linea[0].split('-')[1])
+            currentYear = int(annoMese[0])
+            currentMonth = int(annoMese[1])
 
             for line in my_file:
                 elements = line.strip('\n').split(',')           
@@ -45,8 +45,8 @@ class CSVTimeSeriesFile():
                         rilevazione.append(elements[0])
                         rilevazione.append(int(elements[1]))
                         values.append(rilevazione)
-                        currentYear = int(elements[0].split('-')[0])
-                        currentMonth = int(elements[0].split('-')[1])
+                        currentYear = int(annoMese[0])
+                        currentMonth = int(annoMese[1])
             my_file.close()
 
             return values
