@@ -58,7 +58,6 @@ def find_min_max(time_series):
         dizInterno = {}
         mesiMin = []
         mesiMax = []
-        mesiCounter = 0
         min = time_series[i][1]
         max = time_series[i][1]
         anno = time_series[i][0].split('-')[0]
@@ -79,12 +78,8 @@ def find_min_max(time_series):
                 mesiMax.append(time_series[i][0].split('-')[1])
 
             i=i+1
-            mesiCounter = mesiCounter+1
         
-        if mesiCounter==1:
-            diz[anno] = {}
-        else:
-            dizInterno["min"] = mesiMin
-            dizInterno["max"] = mesiMax
-            diz[anno] = dizInterno
+        dizInterno["min"] = mesiMin
+        dizInterno["max"] = mesiMax
+        diz[anno] = dizInterno
     return diz
